@@ -3,7 +3,7 @@ variable "aws_region" {
 }
 
 variable "create_vpc_shs" {
-	default = true
+	default = false
 }
 
 
