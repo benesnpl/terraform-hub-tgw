@@ -49,3 +49,30 @@ resource "aws_subnet" "Private" {
     Name                              = join("", [var.coid, "-us-E-FW-private-AZ${count.index+1}"])
   }
 }
+
+/* ShR Service Subnet Creation - Uncomment only when you want to create ShR infrastructure too
+
+#Subnet Creation - SHR
+
+resource "aws_subnet" "public_shr" {
+  count = length(var.subnets_cidr_public_shr)
+  vpc_id = aws_vpc.shr_vpc.id
+  cidr_block = element(var.subnets_cidr_public_shr,count.index)
+  availability_zone = element(var.azs,count.index)
+  map_public_ip_on_launch = true
+  tags = {
+    Name = join("", [var.coid, "-us-E-SHR-public-AZ${count.index+1}"])
+  }
+}
+
+resource "aws_subnet" "Private_shr" {
+  count = length(var.subnets_cidr_private_shr)
+  vpc_id = aws_vpc.shr_vpc.id
+  cidr_block = element(var.subnets_cidr_private_shr,count.index)
+  availability_zone = element(var.azs,count.index)
+  map_public_ip_on_launch = false
+  tags = {
+    Name = join("", [var.coid, "-us-E-SHR-private-AZ${count.index+1}"])
+  }
+}
+*/
