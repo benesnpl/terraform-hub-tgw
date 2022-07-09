@@ -33,7 +33,8 @@ resource "aws_customer_gateway" "miami" {
   tags = {
     Name                                = join("", [var.coid, "-Oakbrook-ipsec"])
   }
-    
+ }
+
 #Creation of Oakbrook VPN Connection on TGW
 
  resource "aws_vpn_connection" "Miami" {
