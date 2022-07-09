@@ -24,3 +24,10 @@ data "aws_vpc" "tgw_vpc" {
   }
 }
 
+
+resource "aws_internet_gateway" "main_igw" {
+  vpc_id = locals.tgw_vpc_id
+  tags = {
+    Name = join("", [var.coid, "-FW-IGW"])
+  }
+}
