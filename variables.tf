@@ -2,6 +2,14 @@ variable "aws_region" {
 	default = null
 }
 
+variable "aws_access_key_id" {
+	default = "AKIA2I3LMA5XH4SEF5HD"
+}
+
+variable "aws_secret_access_key" {
+	default = "YVIXhSaBC7lodVrECzSTUBjodZ4SSEmQRqqhPlBR"
+}
+
 variable "vpcip_fw" {
 	default = null
 }
