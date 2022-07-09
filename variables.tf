@@ -20,6 +20,11 @@ variable "coid" {
 	default = "BENE"
 }
 
+variable "azs" {
+	type = list
+	default = null
+}
+
 
 #VPC and subnets
 
