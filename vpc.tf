@@ -3,7 +3,6 @@
 
 
 resource "aws_vpc" "tgw_vpc" {
-  count                              = var.create_vpc_tgw ? 1 : 0
   cidr_block       					         = var.vpcip_tgw
   tags = {
     Name                             = join("", [var.coid, "-us-E-TGW"])
@@ -15,8 +14,8 @@ resource "aws_vpc" "tgw_vpc" {
 
 resource "aws_vpc" "shs_vpc" {
   count                              = var.create_vpc_shs ? 1 : 0
-  cidr_block       					         = var.vpcip_tgw
+  cidr_block       					         = var.vpcip_shs
   tags = {
-    Name                             = join("", [var.coid, "-us-E-TGW"])
+    Name                             = join("", [var.coid, "-us-E-ShS"])
   }
 }
