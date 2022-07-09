@@ -21,3 +21,7 @@ variable "aws_access_key_id" {
 variable "aws_secret_access_key" {
 	default = null
 }
+
+variable "coid" {
+	default = "BENE"
+}
