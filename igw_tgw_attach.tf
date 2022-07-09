@@ -49,3 +49,15 @@ resource "aws_ec2_transit_gateway_vpc_attachment" "tgw-main_shr" {
 }
   */
   
+#Reads the IDs of the auto creted VPN TGW attachments in order to add to TGW routing table
+
+ data "aws_ec2_transit_gateway_vpn_attachment" "oak_attach" {
+  transit_gateway_id                            = aws_ec2_transit_gateway.fw_tgw.id
+  vpn_connection_id                             = aws_vpn_connection.Oakbrook.id
+}
+
+data "aws_ec2_transit_gateway_vpn_attachment" "miami_attach" {
+  transit_gateway_id                            = aws_ec2_transit_gateway.fw_tgw.id
+  vpn_connection_id                             = aws_vpn_connection.Miami.id
+}
+ 
