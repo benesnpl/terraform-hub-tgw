@@ -3,24 +3,24 @@
 
 
 resource "aws_vpc" "fw_vpc" {
-  cidr_block       					         = var.vpcip_tgw
+  cidr_block       					         = var.vpcip_fw
   tags = {
     Name                             = join("", [var.coid, "-us-E-TGW"])
   }
 }
 
 
-#There is the posibility to create the ShS VPC too for LM etc. Set variable shs_vpc to true and give cidr for the ShS vpc
+/* Uncomment if you want to create a ShR VPC too
 
 resource "aws_vpc" "shs_vpc" {
-  count                              = var.create_vpc_shs ? 1 : 0
   cidr_block       					         = var.vpcip_shs
   tags = {
     Name                             = join("", [var.coid, "-us-E-ShS"])
   }
 }
 
-
+*/
+  
 #this is to create subnets on TGW vpc
 #How many subnets will be created has to do on how many subnet CIDR you will have in subnets_cidr_private/public variable
 #The AZs will be picked by az variable list . If you have more than subnets that AZ then it will be serially distributed accross the AZs
