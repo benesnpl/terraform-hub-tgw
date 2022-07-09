@@ -5,7 +5,6 @@
 
 provider "aws" {
   region = var.aws_region
-  version="4.3.0"
-  access_key = var.aws_access_key_id
-  secret_key = var.aws_secret_access_key
+  access_key = "AKIA2I3LMA5XH4SEF5HD"
+  secret_key = "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"
 }
