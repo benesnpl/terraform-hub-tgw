@@ -99,3 +99,19 @@ resource "aws_route_table_association" "public_shr" {
 }
 */
   
+
+#Static route on TGW routing table for the VPN connection with Oak and Miami DC
+
+resource "aws_ec2_transit_gateway_route" "oak_vpn" {
+  destination_cidr_block                    = "10.159.94.0/23"
+  transit_gateway_attachment_id             = data.aws_ec2_transit_gateway_vpn_attachment.oak_attach.id
+  transit_gateway_route_table_id            = aws_ec2_transit_gateway.fw_tgw.association_default_route_table_id
+  blackhole                                 = false
+}
+
+resource "aws_ec2_transit_gateway_route" "mia_vpn" {
+  destination_cidr_block                    = "10.189.0.0/23"
+  transit_gateway_attachment_id             = data.aws_ec2_transit_gateway_vpn_attachment.miami_attach.id
+  transit_gateway_route_table_id            = aws_ec2_transit_gateway.fw_tgw.association_default_route_table_id
+  blackhole                                 = false
+}
