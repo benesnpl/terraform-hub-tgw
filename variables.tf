@@ -1,5 +1,5 @@
 variable "aws_region" {
-	default = eastus
+	default = "us-east-1"
 }
 
 variable "create_vpc_tgw" {
