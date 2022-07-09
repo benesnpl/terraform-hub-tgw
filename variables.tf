@@ -16,11 +16,11 @@ variable "vpcip_shs" {
 }
 
 variable "aws_access_key_id" {
-	default = null
+	default = "AKIA2I3LMA5XH4SEF5HD"
 }
 
 variable "aws_secret_access_key" {
-	default = null
+	default = "YVIXhSaBC7lodVrECzSTUBjodZ4SSEmQRqqhPlBR"
 }
 
 variable "coid" {
