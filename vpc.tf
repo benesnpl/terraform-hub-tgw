@@ -6,8 +6,7 @@
 resource "aws_vpc" "tgw_vpc" {
   count                              = var.create_vpc_tgw ? 1 : 0
   cidr_block       					         = var.vpcip_tgw
-  tags = 
-  {
+  tags = {
     Name                             = join("", [var.coid, "-us-E-TGW"])
   }
 }
