@@ -11,6 +11,10 @@ variable "vpcip_tgw" {
 	default = "192.168.2.0/24"
 }
 
+variable "vpcip_shs" {
+	default = "192.168.3.0/24"
+}
+
 variable "aws_access_key_id" {
 	default = null
 }
