@@ -15,9 +15,8 @@ variable "coid" {
 	default = "BENE"
 }
 
-
-variable "coid" {
-	default = "BENE"
+variable "aws_region" {
+	default = null
 }
 
 variable "azs" {
@@ -33,7 +32,7 @@ variable "create_vpc_shs" {
 }
 
 
-variable "vpcip_tgw" {
+variable "vpcip_fw" {
 	default = "192.168.2.0/24"
 }
 
