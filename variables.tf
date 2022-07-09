@@ -3,11 +3,11 @@ variable "aws_region" {
 }
 
 variable "create_vpc_tgw" {
-	default = true
+	default = false
 }
 
 variable "eg_tgw_vpc_name" {
-	default = null
+	default ="malakas"
 }
 
 variable "vpcip_tgw" {
