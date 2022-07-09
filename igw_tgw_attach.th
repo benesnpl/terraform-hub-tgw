@@ -1,9 +1,0 @@
-#This creates a IGW to FW vpc for Internet access
-
-resource "aws_internet_gateway" "main_igw" {
-  depends_on                                  = [aws_ec2_transit_gateway.fw_tgw,aws_internet_gateway.main_igw]
-  vpc_id                                      = aws_vpc.fw_vpc.id
-  tags = {
-    Name                                      = join("", [var.coid, "-FW-IGW"])
-  }
-}
