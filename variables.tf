@@ -3,7 +3,7 @@ variable "aws_region" {
 }
 
 variable "create_vpc_tgw" {
-	default = True
+	default = "True"
 }
 
 variable "eg_tgw_vpc_name" {
