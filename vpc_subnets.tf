@@ -2,7 +2,7 @@
 #Variables needed : vpcip_tgw, coid
 
 
-resource "aws_vpc" "tgw_vpc" {
+resource "aws_vpc" "fw_vpc" {
   cidr_block       					         = var.vpcip_tgw
   tags = {
     Name                             = join("", [var.coid, "-us-E-TGW"])
