@@ -2,13 +2,10 @@ variable "aws_region" {
 	default = "us-east-1"
 }
 
-variable "create_vpc_tgw" {
+variable "create_vpc_shs" {
 	default = false
 }
 
-variable "eg_tgw_vpc_name" {
-	default ="malakas"
-}
 
 variable "vpcip_tgw" {
 	default = "192.168.2.0/24"
